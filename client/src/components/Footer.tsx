@@ -9,6 +9,7 @@ import { Link } from 'wouter';
  * - Links organized by category (Navigation, Legal)
  * - Social links for engagement
  * - Architecture ready for future features (Dictionary, Collections, Lenses)
+ * - Concept Library integrated as support tool
  */
 export default function Footer() {
   return (
@@ -42,6 +43,13 @@ export default function Footer() {
                 <Link href="/#topics">
                   <a className="text-sm text-muted-foreground hover:text-accent transition-colors duration-200">
                     Topics
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/concepts">
+                  <a className="text-sm text-muted-foreground hover:text-accent transition-colors duration-200">
+                    Concepts
                   </a>
                 </Link>
               </li>

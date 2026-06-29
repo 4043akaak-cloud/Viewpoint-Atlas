@@ -6,7 +6,7 @@ import { Link } from 'wouter';
  * 
  * Design Philosophy: Minimalist Knowledge Navigator
  * - Website name clearly displayed (Logo + "Viewpoint Atlas")
- * - Clean, minimal navigation (Topics, Idea Archaeology, About)
+ * - Clean, minimal navigation (Topics, Concepts, Idea Archaeology, About)
  * - Strong brand identity at the top
  * - Future-ready structure for additional features
  */
@@ -30,6 +30,11 @@ export default function Header() {
             <Link href="/#topics">
               <a className="text-xs md:text-sm text-muted-foreground hover:text-accent transition-colors duration-200 font-medium">
                 Topics
+              </a>
+            </Link>
+            <Link href="/concepts">
+              <a className="text-xs md:text-sm text-muted-foreground hover:text-accent transition-colors duration-200 font-medium">
+                Concepts
               </a>
             </Link>
             <Link href="/#ia">
