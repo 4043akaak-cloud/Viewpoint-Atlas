@@ -5,17 +5,17 @@ import { Link } from 'wouter';
  * Footer Component
  * 
  * Design Philosophy: Minimalist Knowledge Navigator
- * - Multi-column layout with clear grouping
- * - Links organized by category (Main, Features, Legal, Social)
- * - Newsletter signup optional
- * - Future-ready structure for expanding features
+ * - Minimal footer with essential navigation only
+ * - Links organized by category (Navigation, Legal)
+ * - Social links for engagement
+ * - Architecture ready for future features (Dictionary, Collections, Lenses)
  */
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-background">
       <div className="container py-12 md:py-16">
         {/* Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
           {/* Brand Column */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -62,34 +62,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Features (Future) */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-4 text-sm">Features</h4>
-            <ul className="space-y-2">
-              <li>
-                <span className="text-sm text-muted-foreground cursor-not-allowed opacity-60">
-                  Dictionary
-                </span>
-              </li>
-              <li>
-                <span className="text-sm text-muted-foreground cursor-not-allowed opacity-60">
-                  Collections
-                </span>
-              </li>
-              <li>
-                <span className="text-sm text-muted-foreground cursor-not-allowed opacity-60">
-                  Lenses
-                </span>
-              </li>
-              <li>
-                <span className="text-sm text-muted-foreground cursor-not-allowed opacity-60">
-                  Interactive Maps
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal & Social */}
+          {/* Legal */}
           <div>
             <h4 className="font-semibold text-foreground mb-4 text-sm">Legal</h4>
             <ul className="space-y-2">
@@ -104,13 +77,6 @@ export default function Footer() {
                 <Link href="/terms">
                   <a className="text-sm text-muted-foreground hover:text-accent transition-colors duration-200">
                     Terms
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact">
-                  <a className="text-sm text-muted-foreground hover:text-accent transition-colors duration-200">
-                    Contact
                   </a>
                 </Link>
               </li>

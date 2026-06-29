@@ -22,16 +22,16 @@ import {
  * Home Page – Viewpoint Atlas MVP
  * 
  * Design Philosophy: Minimalist Knowledge Navigator
- * - Architecture-first approach
+ * - Architecture-first approach with clear branding
  * - Four sections: Hero, Topic Genres, Idea Archaeology, Footer
  * - Each section is designed as a future container
- * - Navigation is self-explanatory
+ * - Strong visual hierarchy: Website Name → Headline → Description → CTA
  * 
  * Structure:
- * 1. Hero Section – Headline + description + CTA
+ * 1. Hero Section – Website Name + Main Headline + Short Description + CTA
  * 2. Topic Genres – 10 major genres of knowledge
  * 3. Idea Archaeology – 3 core pillars
- * 4. Footer – Navigation + links
+ * 4. Footer – Navigation + links (future features hidden)
  */
 export default function Home() {
   // Topic Genres Data
@@ -120,15 +120,20 @@ export default function Home() {
         {/* ===== HERO SECTION ===== */}
         <section className="section-container bg-gradient-to-br from-background via-background to-accent/5">
           <div className="container">
-            <div className="max-w-3xl mx-auto text-center">
-              {/* Headline */}
-              <h1 className="text-balance mb-6">
-                Explore the Architecture of Ideas
+            <div className="max-w-2xl mx-auto text-center">
+              {/* Website Name */}
+              <p className="text-xs md:text-sm font-semibold text-accent tracking-widest uppercase mb-6">
+                Viewpoint Atlas
+              </p>
+
+              {/* Main Headline */}
+              <h1 className="text-balance mb-6 text-4xl md:text-5xl lg:text-6xl">
+                Experience the World Through Different Minds
               </h1>
 
-              {/* Subheading */}
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-                Viewpoint Atlas maps the interconnected world of human knowledge. Understand how ideas evolve, connect, and shape our understanding of history, science, culture, and beyond.
+              {/* Short Description */}
+              <p className="text-base md:text-lg text-muted-foreground mb-10 leading-relaxed max-w-xl mx-auto">
+                Explore how ideas evolve, connect, and shape human understanding across history, science, culture, and beyond.
               </p>
 
               {/* CTA Button */}
