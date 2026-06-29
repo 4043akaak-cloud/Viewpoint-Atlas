@@ -16,6 +16,7 @@ import {
   Layers,
   GitBranch,
   Zap as ZapIcon,
+  Eye,
 } from 'lucide-react';
 
 /**
@@ -85,6 +86,11 @@ export default function Home() {
       title: 'Media',
       description: 'Communication systems, journalism, and the evolution of information.',
       icon: Layers,
+    },
+    {
+      title: 'Conspiracy',
+      description: 'Explore the history, psychology, and evolution of conspiracies, conspiracy theories, secrecy, and hidden power.',
+      icon: Eye,
     },
   ];
 
@@ -169,7 +175,13 @@ export default function Home() {
                   title={genre.title}
                   description={genre.description}
                   icon={genre.icon}
-                  onClick={handleComingSoon}
+                  onClick={() => {
+                    if (genre.title === 'Conspiracy') {
+                      window.location.href = '/topics/conspiracy';
+                    } else {
+                      handleComingSoon();
+                    }
+                  }}
                 />
               ))}
             </div>
