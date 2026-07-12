@@ -1,106 +1,132 @@
-# Viewpoint Atlas v4 MVP
+# Viewpoint Atlas
+
+> **Viewpoint Atlas exists to help people explore how humanity understands the world.**
+>
+> We do not seek to provide definitive answers.
+>
+> We seek to create an environment where curiosity grows through exploration, comparison, and connected ideas.
+>
+> Every design decision, feature, and piece of content should support this mission.
+
+---
+
+## 🎯 Project Vision
 
 **Viewpoint Atlas** is an intellectual gateway for exploring how ideas emerge, evolve, and shape human understanding across history, science, culture, and beyond.
 
-Rather than providing definitive answers, Viewpoint Atlas helps readers understand the architecture of ideas themselves—how concepts connect, contradict, and change over time.
+Rather than providing definitive answers, Viewpoint Atlas helps readers understand the **architecture of ideas themselves**—how concepts connect, contradict, and change over time.
+
+The platform embodies a simple belief: **the world is complex, and understanding requires exploring multiple perspectives.**
 
 ---
 
-## 🎯 Project Philosophy
+## 🧭 Core Philosophy
 
-**Deeper Curiosity, Not Certainty**
+### Curiosity Over Certainty
 
-Viewpoint Atlas operates on a simple principle: the world is complex, and understanding requires exploring multiple perspectives. The platform is designed to:
+We prioritize helping people ask better questions over providing final answers. The goal is deeper understanding, not ideological conclusion.
 
-- **Explore ideas architecturally** – How do concepts connect and influence each other?
-- **Remain neutral** – Present information without judgment or ranking
-- **Encourage critical thinking** – Help readers ask better questions
-- **Support investigation** – Provide tools to understand how knowledge evolves
+### Encourage Exploration
 
----
+Every page should naturally encourage further exploration. Internal links are not just navigation—they are part of the learning experience.
 
-## 📋 Current Features (MVP)
+### Present Multiple Viewpoints
 
-### 1. **Homepage**
-- Hero section with project mission
-- **Topic Genres** – 11 knowledge domains (History, Science, Technology, Economics, Politics, Psychology, Culture, Philosophy, Society, Media, **Conspiracy**)
-- **Idea Archaeology** – 3 core lenses for understanding ideas:
-  - Reverse Engineering Breakthroughs
-  - Evolution of Solutions
-  - Future Bottlenecks
+When appropriate, show how different perspectives approach the same question. Avoid forcing ideological conclusions.
 
-### 2. **Concept Library**
-- Simple search interface for quick concept lookup
-- Lightweight support tool to reduce friction while reading
-- Sample entry: "Military-Industrial Complex"
-- Architecture supports internal linking from Topic pages
+### Build a Knowledge Network
 
-### 3. **Featured Topic: Conspiracy**
-A comprehensive exploration of how conspiracy theories emerge, evolve, and change:
+Topics are not isolated articles. They are nodes in a connected knowledge network where ideas relate to and inform each other.
 
-- **What is a Conspiracy?** – Definitions and terminology
-- **A Brief History** – Historical context and evolution
-- **Why Do Conspiracy Theories Emerge?** – 7 psychological and social factors
-- **How Do Conspiracy Theories Evolve?** – 3 evolution patterns with flowcharts
-- **Historical Examples** – 8 case studies (9/11, Watergate, MKUltra, etc.)
-- **How Should We Think?** – Critical thinking framework
-- **Questions Worth Asking** – Open-ended questions for deeper inquiry
+### Concept Library as Support
+
+The Concept Library exists to reduce friction while reading, not to become the main destination. It is a lightweight tool for understanding unfamiliar terms.
+
+### Simplicity and Clarity
+
+Simplicity is preferred over unnecessary complexity. Every feature should serve the core mission of helping people explore ideas.
 
 ---
 
-## 🏗️ Project Structure
+## 🏗️ Architecture Overview
+
+Viewpoint Atlas is built as a **static React application** with a scalable component architecture designed to support hundreds of topics and thousands of concepts.
+
+### Core Components
+
+- **Homepage** – Entry point with Topic Genres and Idea Archaeology lenses
+- **Topic Pages** – Deep explorations of individual subjects (e.g., Conspiracy)
+- **Concept Library** – Lightweight reference tool for key terms
+- **Navigation System** – Persistent header and footer for easy exploration
+
+### Design Principles
+
+- **Minimalist Knowledge Navigator** – Clean, elegant, focused on content
+- **Mobile-First** – Responsive across all devices
+- **Intellectual Tone** – Academic, neutral, encouraging critical thinking
+- **Visual Hierarchy** – Clear structure with generous whitespace
+
+---
+
+## 📂 Folder Structure
 
 ```
 viewpoint-atlas-mvp/
 ├── client/                          # React frontend
-│   ├── public/                      # Static files (favicon, robots.txt)
+│   ├── public/                      # Static files
 │   ├── src/
-│   │   ├── pages/                   # Page-level components
-│   │   │   ├── Home.tsx             # Homepage with all sections
-│   │   │   ├── ConspiracyTopic.tsx  # Conspiracy Featured Topic
-│   │   │   ├── ConceptLibrary.tsx   # Concept Library landing
-│   │   │   ├── ConceptDetail.tsx    # Individual concept pages
+│   │   ├── pages/                   # Page components
+│   │   │   ├── Home.tsx             # Homepage
+│   │   │   ├── ConspiracyTopic.tsx  # Topic pages
+│   │   │   ├── ConceptLibrary.tsx   # Concept landing
+│   │   │   ├── ConceptDetail.tsx    # Concept pages
 │   │   │   ├── About.tsx            # About page
 │   │   │   └── NotFound.tsx         # 404 page
-│   │   ├── components/              # Reusable UI components
-│   │   │   ├── Header.tsx           # Navigation header
-│   │   │   ├── Footer.tsx           # Footer with navigation
-│   │   │   ├── GenreCard.tsx        # Topic genre card component
-│   │   │   ├── IACard.tsx           # Idea Archaeology card
-│   │   │   ├── ConceptSearch.tsx    # Concept search component
-│   │   │   ├── ui/                  # shadcn/ui components
-│   │   │   └── ErrorBoundary.tsx    # Error handling
+│   │   ├── components/              # Reusable components
+│   │   │   ├── Header.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── GenreCard.tsx
+│   │   │   ├── IACard.tsx
+│   │   │   ├── ConceptSearch.tsx
+│   │   │   └── ui/                  # shadcn/ui components
 │   │   ├── data/                    # Static data
-│   │   │   └── concepts.ts          # Concept Library data
+│   │   │   └── concepts.ts
 │   │   ├── contexts/                # React contexts
-│   │   │   └── ThemeContext.tsx     # Theme management
-│   │   ├── hooks/                   # Custom React hooks
-│   │   ├── lib/                     # Utility functions
-│   │   ├── App.tsx                  # Main app component with routing
-│   │   ├── main.tsx                 # React entry point
-│   │   └── index.css                # Global styles and design tokens
-│   └── index.html                   # HTML template
-├── server/                          # Express server (placeholder)
-├── shared/                          # Shared types and constants
-├── package.json                     # Dependencies
-├── pnpm-lock.yaml                   # Lock file
-├── tsconfig.json                    # TypeScript config
-├── vite.config.ts                   # Vite config
+│   │   ├── hooks/                   # Custom hooks
+│   │   ├── lib/                     # Utilities
+│   │   ├── App.tsx                  # Main app with routing
+│   │   ├── main.tsx                 # Entry point
+│   │   └── index.css                # Global styles
+│   └── index.html
+├── server/                          # Express server
+├── shared/                          # Shared types
+├── docs/                            # Project documentation
+│   ├── CONSTITUTION.md              # Development principles
+│   ├── Vision.md                    # Long-term vision
+│   ├── Philosophy.md                # Design philosophy
+│   ├── Architecture.md              # Technical architecture
+│   ├── Roadmap.md                   # Future phases
+│   ├── Content-Workflow.md          # How to add topics
+│   ├── Idea-Seeds.md                # Future content ideas
+│   └── UX-Principles.md             # UX philosophy
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
 └── README.md                        # This file
 ```
 
 ---
 
-## 🎨 Design System
+## 🛠️ Technology Stack
 
-**Design Philosophy: Minimalist Knowledge Navigator**
-
-- **Aesthetic:** Modern minimalism inspired by museum maps and library directories
-- **Color Palette:** Clean white background + slate-blue accents
-- **Typography:** Geist (headlines) + Inter (body text)
-- **Layout:** Scalable grid-based, non-centered asymmetry
-- **Interaction:** 200-250ms smooth transitions, subtle hover effects
-- **Responsive:** Mobile-first, fully responsive across all devices
+| Layer | Technology |
+|-------|-----------|
+| **Frontend** | React 19 + TypeScript |
+| **Styling** | Tailwind CSS 4 + shadcn/ui |
+| **Routing** | Wouter |
+| **Build** | Vite |
+| **Package Manager** | pnpm |
+| **Version Control** | Git + GitHub |
 
 ---
 
@@ -124,7 +150,7 @@ pnpm install
 pnpm dev
 ```
 
-The development server will start at `http://localhost:3000/`
+Development server: `http://localhost:3000/`
 
 ### Build for Production
 
@@ -134,23 +160,9 @@ pnpm build
 
 ---
 
-## 📂 Key Files
+## 📝 Development Workflow
 
-| File | Purpose |
-|------|---------|
-| `client/src/pages/Home.tsx` | Homepage with all 4 sections |
-| `client/src/pages/ConspiracyTopic.tsx` | Conspiracy Featured Topic (7 sections) |
-| `client/src/data/concepts.ts` | Concept Library data and search logic |
-| `client/src/index.css` | Global styles and design tokens |
-| `client/src/App.tsx` | Routing configuration |
-
----
-
-## 🔄 Git Workflow
-
-This project uses Git for version control with the following conventions:
-
-### Commit Message Format
+### Commit Message Convention
 
 ```
 <type>: <subject>
@@ -164,17 +176,17 @@ This project uses Git for version control with the following conventions:
 - `feat:` – New feature
 - `fix:` – Bug fix
 - `docs:` – Documentation
-- `style:` – Code style (no logic change)
 - `refactor:` – Code refactoring
-- `perf:` – Performance improvement
+- `perf:` – Performance
+- `style:` – Code style
 - `test:` – Tests
-- `chore:` – Build, dependencies, etc.
+- `chore:` – Build/dependencies
 
 **Examples:**
 ```
-feat: Add Conspiracy Featured Topic with 7 sections
+feat: Add History topic page with 5 sections
 fix: Correct mobile layout for Concept Library
-docs: Update README with project architecture
+docs: Update Architecture.md with new component structure
 refactor: Simplify ConceptSearch component
 ```
 
@@ -185,98 +197,128 @@ refactor: Simplify ConceptSearch component
 - **bugfix/*** – Bug fix branches
 
 **Workflow:**
-1. Create feature branch: `git checkout -b feature/new-topic`
-2. Make commits with clear messages
-3. Push to GitHub: `git push origin feature/new-topic`
-4. Create Pull Request for review
-5. Merge to main after approval
+```bash
+# Create feature branch
+git checkout -b feature/new-topic
+
+# Make commits
+git commit -m "feat: Add new topic"
+
+# Push to GitHub
+git push origin feature/new-topic
+
+# Create Pull Request on GitHub
+# After review, merge to main
+```
 
 ---
 
-## 📋 Development Guidelines
+## 📚 Current Features (MVP)
 
-### Code Organization
+### Homepage
+- **Hero Section** – Project mission and introduction
+- **Topic Genres** – 11 knowledge domains
+- **Idea Archaeology** – 3 lenses for understanding ideas
 
-- **Components:** Keep components small and focused
-- **Reusability:** Extract shared UI into `components/` directory
-- **Styling:** Use Tailwind utilities and design tokens from `index.css`
-- **Data:** Keep static data in `data/` directory
-- **Types:** Use TypeScript for type safety
+### Concept Library
+- Search interface for quick concept lookup
+- Lightweight support tool
+- Sample entry: "Military-Industrial Complex"
+- Ready for internal linking
 
-### Design Consistency
-
-- Use existing design tokens (colors, spacing, typography)
-- Follow the established layout patterns
-- Maintain responsive design across all breakpoints
-- Preserve the intellectual, neutral tone
-
-### Performance
-
-- Lazy load components when appropriate
-- Optimize images and assets
-- Minimize bundle size
-- Use React best practices (memoization, hooks)
+### Featured Topic: Conspiracy
+- 7 comprehensive sections
+- Neutral, intellectual approach
+- Flowcharts and visual organization
+- Historical examples with case studies
+- Critical thinking framework
 
 ---
 
-## 🔗 Internal Linking Architecture
+## 🔮 Future Expansion
 
-The project supports internal linking between sections:
+### Phase 2: Topic Expansion
+- History, Science, Technology, Economics, Politics topics
+- Each with 5-7 sections
+- Internal linking between topics
 
-- **Concept Links:** Topic pages can link to Concept Library entries
-- **Topic Links:** Concept pages can reference Topic pages
-- **Example Links:** Historical examples can link to dedicated topic pages
+### Phase 3: Concept Library Growth
+- 100+ concept entries
+- Automatic linking from topics
+- Related concepts network
 
-**Implementation:** Links use URL patterns like `/concepts/military-industrial-complex` and `/topics/conspiracy`
+### Phase 4: Advanced Features
+- Global search
+- User collections
+- Timeline visualizations
+- Interactive idea maps
 
----
-
-## 📝 Future Development
-
-### Planned Features
-
-1. **Additional Topic Pages** – History, Science, Technology, etc.
-2. **Expanded Concept Library** – Add 14+ concept entries
-3. **Topics Landing Page** – Overview of all available topics
-4. **Search Functionality** – Global search across topics and concepts
-5. **Related Content** – Show connections between ideas
-6. **User Collections** – Allow users to save and organize ideas
-7. **Timeline Views** – Visualize idea evolution over time
-8. **Interactive Maps** – Explore idea relationships visually
-
-### Scalability Considerations
-
-- Architecture supports multiple topic pages
-- Concept Library can grow to hundreds of entries
-- Internal linking system is ready for expansion
-- Component structure allows for easy addition of new sections
+### Phase 5: Community & Collaboration
+- User contributions
+- Peer review system
+- Multiple languages
+- Community translations
 
 ---
 
-## 🤝 Contributing
+## 🤝 Contribution Guidelines
 
-When contributing to Viewpoint Atlas:
+Before implementing new features, always refer to:
+1. **docs/CONSTITUTION.md** – Development principles
+2. **docs/Philosophy.md** – Design philosophy
+3. **docs/Content-Workflow.md** – How to add topics
 
-1. **Preserve Philosophy** – Maintain the neutral, intellectual approach
-2. **Follow Conventions** – Use established code and naming patterns
-3. **Document Changes** – Update README if architecture changes
-4. **Test Responsiveness** – Ensure mobile and desktop compatibility
-5. **Write Clear Commits** – Use meaningful commit messages
+### Key Principles
+
+- **Preserve Philosophy** – Maintain neutral, intellectual approach
+- **Follow Conventions** – Use established patterns
+- **Document Changes** – Update docs if architecture changes
+- **Test Responsiveness** – Mobile and desktop compatibility
+- **Write Clear Commits** – Meaningful commit messages
+
+---
+
+## 📖 Documentation
+
+All project documentation is in the `/docs` folder:
+
+- **CONSTITUTION.md** – Permanent development principles
+- **Vision.md** – Long-term purpose and goals
+- **Philosophy.md** – Design and UX philosophy
+- **Architecture.md** – Technical architecture details
+- **Roadmap.md** – Development phases and timeline
+- **Content-Workflow.md** – How to implement new topics
+- **Idea-Seeds.md** – Future content ideas
+- **UX-Principles.md** – UX design philosophy
+
+---
+
+## 🔗 Links
+
+- **GitHub Repository:** https://github.com/4043akaak-cloud/Viewpoint-Atlas
+- **Live Site:** (Coming soon)
+- **Issues & Discussions:** GitHub Issues
 
 ---
 
 ## 📄 License
 
-This project is open source and available under the MIT License.
+MIT License – See LICENSE file for details
 
 ---
 
-## 📞 Contact
-
-For questions or suggestions about Viewpoint Atlas, please open an issue on GitHub.
-
----
-
-**Last Updated:** July 2026  
 **Version:** 4.0 MVP  
-**Repository:** https://github.com/4043akaak-cloud/Viewpoint-Atlas
+**Last Updated:** July 2026  
+**Maintained by:** Viewpoint Atlas Team
+
+---
+
+## 🎓 The Viewpoint Atlas Principle
+
+> We believe that understanding comes not from certainty, but from curiosity.
+>
+> Every feature, every design decision, every piece of content should serve this principle.
+>
+> Viewpoint Atlas is not a destination. It is a gateway to deeper exploration.
+>
+> Welcome to the architecture of ideas.
